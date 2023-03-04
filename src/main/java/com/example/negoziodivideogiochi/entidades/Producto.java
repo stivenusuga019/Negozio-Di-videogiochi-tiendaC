@@ -1,29 +1,53 @@
 package com.example.negoziodivideogiochi.entidades;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="productos" )
 public class Producto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer id;
+    @Column(name="nombre")
     private String nombre;
+    @Column(name="foto")
     private String foto;
+    @Column(name="descripcion")
     private String descripcion;
+    @Column(name="cantidad")
     private Integer cantidad;
+    @Column(name="precioUnitario")
     private Double precioUnitario;
+    @Column(name="clasificacion")
     private String clasificacion;
+    @Column(name="marca")
     private String marca;
-    private String presentacio;
+    @Column(name="presentacion")
+    private String presentacion;
+    @Column(name="peso")
     private Double peso;
+    @Column(name="estado")
     private Boolean estado;
+    @Column(name="proveesor")
     private String proveedor;
+    @Column(name="volumen")
     private Double volumen;
+    @Column(name="fechaIngreso")
     private String fechaIngreso;
+    @Column(name="fechaVencimiento")
     private String fechaVencimiento;
+    @Column(name="aplicaDescuento")
     private Boolean aplicaDescuento;
+    @Column(name="IVA")
+    private String IVA;
 
 
     public Producto() {
     }
 
-    public Producto(Integer id, String nombre, String foto, String descripcion, Integer cantidad, Double precioUnitario, String clasificacion, String marca, String presentacio, Double peso, Boolean estado, String proveedor, Double volumen, String fechaIngreso, String fechaVencimiento, Boolean aplicaDescuento) {
+    public Producto(Integer id, String nombre, String foto, String descripcion, Integer cantidad, Double precioUnitario, String clasificacion, String marca, String presentacion, Double peso, Boolean estado, String proveedor, Double volumen, String fechaIngreso, String fechaVencimiento, Boolean aplicaDescuento) {
         this.id = id;
         this.nombre = nombre;
         this.foto = foto;
@@ -32,7 +56,7 @@ public class Producto {
         this.precioUnitario = precioUnitario;
         this.clasificacion = clasificacion;
         this.marca = marca;
-        this.presentacio = presentacio;
+        this.presentacion = presentacion;
         this.peso = peso;
         this.estado = estado;
         this.proveedor = proveedor;
@@ -107,11 +131,11 @@ public class Producto {
     }
 
     public String getPresentacio() {
-        return presentacio;
+        return presentacion;
     }
 
     public void setPresentacio(String presentacio) {
-        this.presentacio = presentacio;
+        this.presentacion = presentacio;
     }
 
     public Double getPeso() {
@@ -169,4 +193,5 @@ public class Producto {
     public void setAplicaDescuento(Boolean aplicaDescuento) {
         this.aplicaDescuento = aplicaDescuento;
     }
+
 }
